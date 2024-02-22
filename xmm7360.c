@@ -1262,14 +1262,22 @@ static void xmm7360_tty_close(struct tty_struct *tty, struct file *filp)
 		tty_port_close(&qp->port, tty, filp);
 }
 
-static int xmm7360_tty_write(struct tty_struct *tty,
-			     const unsigned char *buffer, int count)
+static ssize_t xmm7360_tty_write(struct tty_struct *tty, const unsigned char *buf, size_t count)
 {
 	struct queue_pair *qp = tty->driver_data;
-	int written;
-	written = xmm7360_qp_write(qp, buffer, count);
-	if (written < count)
+	ssize_t written;
+
+	written = xmm7360_qp_write(qp, buf, count);
+
+	if (written < 0) {
+		// Error occurred during write
+		return written;
+	}
+
+	if (written < count) {
 		qp->tty_needs_wake = 1;
+	}
+
 	return written;
 }
 
