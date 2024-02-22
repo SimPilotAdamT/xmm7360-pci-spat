@@ -128,7 +128,7 @@ csr_req = pscr['body'][:-6] + dcr['body'] + b'\x02\x04\0\0\0\0'
 r.execute('UtaRPCPSConnectSetupReq', csr_req)
 
 if not cfg.dbus:
-    sys.exit(1)
+    sys.exit(0)
 
 myconnection = None
 system_bus = dbus.SystemBus()
@@ -198,6 +198,7 @@ if (myconnection is not None):
         config["ipv4"]["dns"] = dbus.Array([dbus.UInt32(ip) for ip in dbus_ip],
                                            signature=dbus.Signature("u")
                                            )
+        config["ipv4"]["dns-priority"] = cfg.metric
         settings_connection.Update(config)
 else:
     print("adding connection")
