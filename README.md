@@ -2,7 +2,7 @@
 
 # Getting started
 
-![CI](https://github.com/xmm7360/xmm7360-pci/workflows/CI/badge.svg)
+![CI](https://github.com/SimPilotAdamT/xmm7360-pci-spat/workflows/CI/badge.svg)
 
 ## What
 
