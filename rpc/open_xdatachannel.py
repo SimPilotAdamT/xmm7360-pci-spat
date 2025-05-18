@@ -128,7 +128,7 @@ csr_req = pscr['body'][:-6] + dcr['body'] + b'\x02\x04\0\0\0\0'
 r.execute('UtaRPCPSConnectSetupReq', csr_req)
 
 if not cfg.dbus:
-    sys.exit(0)
+    sys.exit(1)
 
 myconnection = None
 system_bus = dbus.SystemBus()
