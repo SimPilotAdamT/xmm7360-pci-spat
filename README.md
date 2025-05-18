@@ -1,8 +1,6 @@
-⚠️ _*In heavy development. No support provided. May not work, may crash your computer, may singe your jaffles.*_ ⚠️
+⚠️ _*In heavy development. Basic support provided. May not work, may crash your computer, may singe your jaffles.*_ ⚠️
 
 # Getting started
-
-![CI](https://github.com/SimPilotAdamT/xmm7360-pci-spat/workflows/CI/badge.svg)
 
 ## What
 
@@ -10,15 +8,11 @@ Driver for Fibocom L850-GL / Intel XMM7360 (PCI ID 8086:7360).
 
 Please see [DEVICES.md](DEVICES.md) a list of devices this has been tested on.
 
+This specific fork fixes issues with building the package as the AUR packages work at the moment. I will be archiving this repo once integration with ModemManager has been implemented. This is being tracked in [#255](https://github.com/xmm7360/xmm7360-pci/issues/225). The pending implementation in ModemManager is the reason why I haven't created a pull request to commit my changes upstream.
+
 ## How
 
 Please see [INSTALLING.md](INSTALLING.md) for details on how to setup this driver on your system.
-
-### Dependencies
-
-- build-essential
-- python3-pyroute2
-- python3-configargparse
 
 ## Status
 
