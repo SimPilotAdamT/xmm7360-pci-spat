@@ -1,17 +1,23 @@
 # Installing
 
+## Arch Linux
+
+This package is available on the AUR, separated into [DKMS Driver](https://aur.archlinux.org/packages/xmm7360-pci-spat-dkms-git) and [scripts/utilities](https://aur.archlinux.org/packages/xmm7360-pci-spat-utils-git). You should be able to install these in the officially supported Arch way or using your favorite AUR helper (tested and working using Paru).
+
+## Other distros
+
 > Note
 >
 > The first time you run `make load`, you will see: `rmmod: ERROR: Module xmm7360 is not currently loaded`.
 > This means the module was not already loaded; which is fine since we're loading it for the first time.
 
-## Dependencies
+### Dependencies
 
 - build-essential
 - python3-pyroute2
 - python3-configargparse
 
-## Using managment script
+### Using managment script
 
 > Only tested on Ubuntu 20.04.
 
@@ -21,7 +27,7 @@ $ sudo ./scripts/lte.sh setup
 $ lte up  # should auto-elevate when run
 ```
 
-## Ubuntu 20.04
+### Ubuntu 20.04
 
 ```
 mkdir ~/tmp/
@@ -48,7 +54,7 @@ Using DKMS (https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support) allo
 
 DKMS also has many other features, like the auto-generation of `.deb` for a particular kernel. See `man dkms` for more.
 
-## Compiling xmm7360.ko with DKMS
+### Compiling xmm7360.ko with DKMS
 The following steps replaces the commands from `Installing/Ubuntu 20.04`, up to and including `make && make load`. **Do not run `lte setup`.**
 
 First, install DKMS and other dependencies:
@@ -94,7 +100,7 @@ xmm7360
 
 **Make sure to test your setup before auto-loading the module**.
 
-## Running w/DKMS Install
+### Running w/DKMS Install
 **Do not run `lte setup`**. Instead, just run `sudo ./scripts/lte.sh up` after loading the kernel module.
 
 # Signing for Secure Boot
