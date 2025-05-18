@@ -49,7 +49,7 @@ echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf
 echo "nameserver 9.9.9.9" | sudo tee -a /etc/resolv.conf
 ```
 
-# Installing with DKMS
+## Installing with DKMS
 Using DKMS (https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support) allows you to automate the **compilation** and **signing** of kernel modules, for example whenever you update your kernel.
 
 DKMS also has many other features, like the auto-generation of `.deb` for a particular kernel. See `man dkms` for more.
